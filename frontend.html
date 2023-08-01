@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Candidate Verification Application</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="nav">
+        <!-- <img src="https://www.safran-group.com/themes/custom/safran_fo/public/images/logo-white.svg" alt="safranlogo"
+            class="safran-logo"> -->
+        <h1 class="navbar-heading">CANDIDATE VERIFICATION</h1>
+    </div>
+    <!-- <div class="video">
+        <video  class="safran-video" autoplay muted loop >
+             <source src="skyscrapers_-_91744 (Original).mp4" type="video/mp4"> 
+            <source src="Untitled.mp4" type="video/mp4">
+        </video>
+    </div> -->
+        
+
+    
+    <div class="container">
+        
+        <div class="main-heading">
+            <h5 class="upload">Upload Attendee Images</h5>
+
+        </div>
+        
+        <div id="result-container">
+        
+        <form action="/compare" method="post" enctype="multipart/form-data">
+            <div>
+                <label for="upload-input1" class="custom-file-upload">
+                    <span id="cm">Choose Image</span>
+                </label>
+                <input type="file" id="upload-input1" class="input-btn" accept="image/*">
+                <div class="uploaded-image" id="uploaded-image1">
+                    <!-- Placeholder for uploaded image 1 -->
+                </div>
+            </div>
+            <div>
+                <label for="upload-input2" class="custom-file-upload">
+                    <span id="cm">Choose Image</span>
+                </label>
+                <input type="file" id="upload-input2" class="input-btn" accept="image/*">
+                <div class="uploaded-image" id="uploaded-image2">
+                    <!-- Placeholder for uploaded image 2 -->
+                </div>
+            </div>
+        </form>
+        <div class="compare-button">
+            <button id="compare-btn" class="btn btn-primary btn-upload">Compare Images</button>
+        </div>
+        <div id="result-container1"></div>
+        <!-- <div class="compare-button">
+        <button id="compare-btn" class="btn btn-primary btn-upload">Compare Images</button> -->
+        </div>
+
+
+        <script>
+            const compareBtn = document.getElementById('compare-btn');
+            compareBtn.addEventListener('click', async () => {
+                const image1File = document.getElementById('upload-input1').files[0];
+                const image2File = document.getElementById('upload-input2').files[0];
+
+                if (image1File && image2File) {
+                    const formData = new FormData();
+                    formData.append('target', image1File);
+                    formData.append('faces', image2File);
+
+                    try {
+                        const response = await fetch('http://localhost:8000/api/v1/compare_faces', {
+                            method: 'POST',
+                            body: formData,
+                        });
+
+
+                        if (response.ok) {
+                            const result = await response.json();
+                            console.log(result);
+                            const resultContainer = document.getElementById('result-container');
+                            // resultContainer.textContent = result[0];
+                            resultContainer.textContent = JSON.stringify(result[0]["result"]);
+                        } else {
+                            console.error('Error:', response.statusText);
+                        }
+                    } catch (error) {
+                        console.error('Error:', error.message);
+                    }
+                } else {
+                    console.error('Please select both images.');
+                }
+            });
+        </script>
+    </div>
+</body>
+
+</html>

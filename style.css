@@ -1,0 +1,186 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "barlow",sans-serif; 
+}
+
+body, html {
+  overflow: hidden;
+}
+
+body{
+
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    
+
+}
+
+.safran-video{
+    position: absolute;
+    left:0px;
+    top:0px;
+    /* border: 2px solid red; */
+    width: 100%;
+    height: auto;
+    z-index: -2;
+
+}
+.container {
+    background-color:transparent;
+    width: 50%;
+
+    padding: 20px 30px;
+    box-shadow: 2px 2px 15px 3px rgb(11, 0, 0) ;
+    border-radius: 10px;
+
+
+  }
+  .btn-upload {
+    margin-top: 10px;
+  }
+  #result-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+
+  }
+  .uploaded-image {
+    width: 300px;
+    height: 300px;
+    border: 2px solid #000307;
+    padding: 10px;
+  }
+
+
+
+  .nav{
+    position: fixed;
+    top: 0px;
+    background-color: #141d29;
+    width: 100%;
+    padding:10px 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    height: 100px;
+
+  }
+
+  .navbar-heading {
+    font-size: 1.75rem;
+    font-family: sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: white;
+    font-family: "barlow",sans-serif; 
+    flex-grow: 1;
+    transform: translateX(-70px);
+
+  }
+  .main-heading{
+    text-align: center;
+    color:#212529;
+  }
+  .safran-logo{
+    width: 150px;
+    height: 150px;
+  }
+
+  .upload{
+    font-size: 32px;
+    color:white;
+    letter-spacing: 2px;
+    
+    
+
+  }
+
+  .compare-button{
+    text-align: center;
+  }
+
+  /* .compare-button:hover{
+    background-color: #274c77;
+    color: white;
+    cursor: pointer;
+  } */
+
+  #compare-btn{
+    padding: 16px 32px;
+    color: #274c77;
+    background-color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 10px;
+    border: none;
+    margin-top: 64px;
+    font-size: 16px;
+
+    transition: 0.7s;
+    
+
+
+
+  }
+
+  #compare-btn:hover{
+    background-color: #274c77;
+    color: white;
+    cursor: pointer;
+  }
+
+
+
+  .input-btn{
+
+   display: none;
+
+  }
+
+  .custom-file-upload {
+    margin-bottom: 12px;
+    display: inline-block;
+    padding: 8px 12px;
+    cursor: pointer;
+    color: #274c77;
+    background-color: white;
+    border-radius: 4px;
+    font-weight: 700;
+
+    transition: 0.8s;
+    
+  }
+
+  .custom-file-upload:hover{
+    background-color: #274c77;
+    color: white;
+    cursor: pointer;
+  }
+
+  #cm{
+    padding:100px 20px;
+  }
+  
+  
+  .audio{
+    display: none;
+  }
+
+  .video{
+    height: 100vh;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    left:0px;
+    top:0px;
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.304),rgba(0,0,0,0.4)); */
+    background-image: linear-gradient(red , yellow);
+  }
+
