@@ -47,8 +47,8 @@ body{
   }
   #result-container {
     margin-top: 20px;
-    display: flex;
-    justify-content: space-around;
+    /* display: flex; */
+    /* justify-content: space-around; */
 
   }
   .uploaded-image {
@@ -102,6 +102,11 @@ body{
 
   }
 
+  .final-form{
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: space-evenly;
+  }
   .compare-button{
     text-align: center;
   }
@@ -114,12 +119,11 @@ body{
 
   #compare-btn{
     padding: 16px 32px;
-    color: #274c77;
-    background-color: white;
     text-transform: uppercase;
     font-weight: 700;
     border-radius: 10px;
-    border: none;
+    background-color: #274c77;
+    color: white;
     margin-top: 64px;
     font-size: 16px;
 
@@ -131,8 +135,7 @@ body{
   }
 
   #compare-btn:hover{
-    background-color: #274c77;
-    color: white;
+    transform: translateY(-5px);
     cursor: pointer;
   }
 
@@ -151,6 +154,7 @@ body{
     cursor: pointer;
     color: #274c77;
     background-color: white;
+    border : 1.5px solid #274c77;
     border-radius: 4px;
     font-weight: 700;
 
@@ -164,10 +168,7 @@ body{
     cursor: pointer;
   }
 
-  #cm{
-    padding:100px 20px;
-  }
-  
+ 
   
   .audio{
     display: none;

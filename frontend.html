@@ -39,7 +39,7 @@
         
         <div id="result-container">
         
-        <form action="/compare" method="post" enctype="multipart/form-data">
+        <form action="/compare" method="post" enctype="multipart/form-data" class="final-form">
             <div>
                 <label for="upload-input1" class="custom-file-upload">
                     <span id="cm">Choose Image</span>
@@ -99,7 +99,7 @@
                         console.error('Error:', error.message);
                     }
                 } else {
-                    console.error('Please select both images.');
+                    alert('Please select both images.');
                 }
             });
         </script>
